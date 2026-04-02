@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://www.apple.com/favicon.ico">
+</head>
+
+<body>
+    <nav>
+        <a href="/"><img id="logo" alt="logo" width="20" />&nbsp;<span id="navtitle"></span></a>
+        <a style="float:right;cursor: pointer;" id="shopping-cart">🛒<span class="cart-count" id="cartCount"></span></a>
+    </nav>
+
+    <section class="hero">
+        <h1 id="bannertxt"></h1>
+    </section>
+
+    <section class="section">
+        <div class="grid" id="menuGrid"></div>
+    </section>
+    <section id="checkoutModal">
+        <div id="cartModal">
+            <button style="width: 100%;" class="btn close-cart">X</button>
+            <div id="cartItems"></div>
+            <button style="width: 100%;" class="btn checkout">
+                <span class="btn-text">Checkout</span>
+                <span class="spinner" style="display:none;">⏳</span>
+            </button>
+        </div>
+        <div id="customerPaymentInfo"></div>
+    </section>
+    <!-- <section id="cartModal">
+        <button style="width: 100%;" class="btn close-cart">X</button>
+        <div id="cartItems"></div>
+        <button style="width: 100%;" class="btn checkout">
+            <span class="btn-text">Checkout</span>
+            <span class="spinner" style="display:none;">⏳</span>
+        </button>
+        <div id="customerPaymentInfo"></div>
+    </section> -->
+    <div id="success-popup" style="display:none; position:fixed; top:0; left:0; 
+  right:0; bottom:0; background: rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+
+        <div
+            style="background:white; border-radius:12px; padding:2rem; max-width:500px; width:90%; text-align:center; font-family:sans-serif;">
+
+            <div style="font-size:2rem; color:green; margin-bottom:1rem;" id="orderconfirm-check">✔️</div>
+
+            <h2 style="font-weight:bold; margin-bottom:1rem;" id="orderconfirm-header">Order Confirmed! 🎉</h2>
+
+            <div style="background-color:#EEF5F3; padding:1rem; margin:1rem 0; border-radius:6px;">
+                Order Number<br>
+                <span id="order-id" style="font-weight:bold;"></span>
+            </div>
+
+            <div id="orderconfirmation" style="display:flex; justify-content:center; gap:1rem; margin-bottom:1rem;">
+            </div>
+
+            <p id="orderconfirm-message"></p>
+
+            <button class="btn" onclick="window.location.href='/'">
+                Continue Shopping
+            </button>
+
+        </div>
+    </div>
+    <div class="prefooterDiv">
+        <div id="subscribe" style="display:none;">
+            <h3>Stay Updated</h3>
+            <span>Get updates on new features, templates, and improvements.</span>
+            <div class="input-group">
+                <input type="email" id="subscribeInfo" placeholder="Email Address" />
+                <button class="subscribe">Get Updates</button>
+            </div>
+            <span id="subscribeMessage"></span>
+        </div>
+        <div>
+            <h3 style="text-align: center;">Contact</h3>
+            <p style="text-align: center;"><span id="address"></span><span id="phone"></span><span
+                    id="email"></span><span id="socialmedia"></span>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; <span id="year"></span> <span id="businessname"></span>. Site developed by <a target="_blank"
+                href="https://ezbizkit.web.app">Ezbizkit</a></p>
+    </footer>
+    <script src="config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
